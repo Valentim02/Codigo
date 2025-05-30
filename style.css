@@ -1,0 +1,151 @@
+html, body {
+  margin: 0; /* Remove o espaço externo padrão */
+  padding: 0; /* Remove o espaço interno padrão */
+  height: 100%; /* Faz com que a página ocupe toda a altura da tela */
+  color: #fff; /* Define a cor do texto para branco */
+  font-family: Arial, sans-serif; /* Define a fonte do site */
+}
+
+/* Fundo da página */
+body {
+  background-color: rgb(28, 64, 28); /* Cor verde escura no fundo */
+  background-size: cover; /* Se tiver imagem de fundo, ela cobre toda a tela */
+}
+
+/* Container principal que agrupa tudo: menu lateral + conteúdo */
+.container {
+  width: auto; /* A largura se ajusta automaticamente */
+  margin: auto; /* Centraliza o container */
+  display: flex; /* Ativa o modelo flexbox para layout lado a lado */
+  height: 100%; /* Ocupa toda a altura da tela */
+  flex-direction: row; /* Elementos ficam lado a lado (menu + conteúdo) */
+}
+
+/* Menu lateral (sidebar) */
+.sidebar {
+  background-color: rgba(128, 128, 128, 0.7); /* Cor cinza com transparência */
+  padding: 20px; /* Espaço interno ao redor dos elementos */
+  box-sizing: border-box; /* Garante que padding não aumente a largura total */
+  display: flex; /* Flexbox ativo */
+  flex-basis: 20%; /* Ocupa 20% da largura da tela */
+  flex-direction: column; /* Elementos empilhados (um abaixo do outro) */
+}
+
+/* Imagem do logo dentro do menu lateral */
+.logo img {
+  display: block; /* Faz a imagem ocupar uma linha só e poder ser centralizada */
+  margin: 0 auto 20px auto; /* Centraliza horizontalmente e adiciona espaço abaixo */
+  max-width: 60%; /* A imagem pode ocupar no máximo 60% da sidebar */
+  height: auto; /* A altura se ajusta para manter proporção */
+}
+
+/* Lista de links do menu */
+.menu ul {
+  list-style: none; /* Remove os pontinhos padrão da lista */
+  padding: 0; /* Remove espaço interno */
+  margin: 0; /* Remove espaço externo */
+}
+
+/* Cada item da lista do menu */
+.menu ul li {
+  margin-bottom: 10px; /* Espaço entre os botões */
+}
+
+/* Link dentro do item do menu */
+.menu ul li a {
+  display: block; /* Ocupa toda a largura disponível */
+  text-decoration: none; /* Remove o sublinhado do link */
+  color: #fff; /* Cor do texto: branca */
+  padding: 10px 15px; /* Espaçamento interno (cima/baixo e lados) */
+  border-radius: 4px; /* Bordas arredondadas */
+  text-align: center; /* Centraliza o texto */
+  font-weight: bold; /* Texto em negrito */
+  transition: opacity 0.3s; /* Suaviza a transição quando passa o mouse */
+}
+
+/* Cores diferentes para cada botão do menu */
+.menu ul li:nth-child(1) a { background-color: #FFA500; } /* Laranja */
+.menu ul li:nth-child(2) a { background-color: #8A9A5B; } /* Verde oliva */
+.menu ul li:nth-child(3) a { background-color: #8B4513; } /* Marrom escuro */
+
+
+
+/* Efeito ao passar o mouse sobre os links do menu */
+.menu ul li a:hover {
+  opacity: 0.8; /* Deixa o botão um pouco transparente */
+}
+
+/* Área principal de conteúdo */
+.content {
+  padding: 20px; /* Espaço interno */
+  display: flex; /* Layout flexível */
+  flex-basis: 100%; /* Ocupa o restante da largura da tela */
+  flex-direction: column; /* Conteúdo em coluna */
+  gap: 20px; /* Espaço entre blocos de conteúdo */
+  overflow-y: auto; /* Se o conteúdo for muito alto, ativa rolagem vertical */
+  box-sizing: border-box; /* Inclui padding no tamanho total */
+}
+
+/* Caixas que aparecem dentro da área de conteúdo */
+.box {
+  background: rgba(0, 0, 0, 0.7); /* Fundo preto com transparência */
+  padding: 20px; /* Espaço interno */
+  border-radius: 5px; /* Cantos arredondados */
+}
+
+/* Título dentro da caixa */
+.box h2 {
+  color: #CC9900; 
+  margin-top: 0; /* Remove o espaço acima do título */
+}
+
+/* Imagem dentro do conteúdo */
+.foto img {
+  width: 100%; /* Ocupa toda a largura disponível */
+  max-width: 100%; /* Nunca ultrapassa 100% do container */
+  height: auto; /* Mantém proporção da imagem */
+  display: block; /* Mostra como bloco para evitar espaços indesejados */
+  border-radius: 4px; /* Cantos arredondados na imagem */
+}
+
+/* ----- RESPONSIVIDADE ----- */
+/* Adapta o layout para telas menores, como celulares e tablets */
+@media (max-width: 768px) {
+  .container {
+      flex-direction: column; /* Empilha menu e conteúdo um embaixo do outro */
+  }
+
+  .sidebar {
+      flex-basis: auto; /* Deixa o tamanho se ajustar automaticamente */
+      width: 100%; /* Ocupa toda a largura da tela */
+      flex-direction: row; /* Coloca o menu na horizontal */
+      overflow-x: auto; /* Ativa rolagem lateral se os botões não couberem */
+  }
+
+  .logo img {
+      max-width: 40px; /* Reduz o tamanho do logo no celular */
+      margin-bottom: 0; /* Tira o espaço embaixo da imagem */
+  }
+
+  .menu ul {
+      display: flex; /* Organiza os botões na horizontal */
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-around; /* Distribui espaço igualmente entre os itens */
+  }
+
+  .menu ul li {
+      margin: 0; /* Remove margem entre os botões */
+  }
+
+  .menu ul li a {
+      padding: 8px 10px; /* Diminui o tamanho dos botões no celular */
+      font-size: 14px; /* Texto um pouco menor */
+      border-radius: 4px;
+  }
+
+  .content {
+      flex-basis: auto;
+      padding: 15px; /* Menos espaço interno no celular */
+  }
+}
