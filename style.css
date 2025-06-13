@@ -8,7 +8,7 @@ html, body {
 
 /* Fundo da página */
 body {
-  background-color: rgb(28, 64, 28); /* Cor verde escura no fundo */
+  background-color: #0f2027; /* Azul-petróleo escuro (mais moderno) */
   background-size: cover; /* Se tiver imagem de fundo, ela cobre toda a tela */
 }
 
@@ -23,7 +23,7 @@ body {
 
 /* Menu lateral (sidebar) */
 .sidebar {
-  background-color: rgba(128, 128, 128, 0.7); /* Cor cinza com transparência */
+  background-color: rgba(0, 123, 255, 0.2); /* Azul claro translúcido */
   padding: 20px; /* Espaço interno ao redor dos elementos */
   box-sizing: border-box; /* Garante que padding não aumente a largura total */
   display: flex; /* Flexbox ativo */
@@ -64,9 +64,10 @@ body {
 }
 
 /* Cores diferentes para cada botão do menu */
-.menu ul li:nth-child(1) a { background-color: #FFA500; } /* Laranja */
-.menu ul li:nth-child(2) a { background-color: #8A9A5B; } /* Verde oliva */
-.menu ul li:nth-child(3) a { background-color: #8B4513; } /* Marrom escuro */
+.menu ul li:nth-child(1) a { background-color: #f75c03; } /* Laranja vibrante */
+.menu ul li:nth-child(2) a { background-color: #20c997; } /* Verde água */
+.menu ul li:nth-child(3) a { background-color: #0077b6; } /* Azul oceano */
+
 
 
 
@@ -95,8 +96,11 @@ body {
 
 /* Título dentro da caixa */
 .box h2 {
-  color: #CC9900; 
-  margin-top: 0; /* Remove o espaço acima do título */
+  color: #f4e04d; /* Amarelo solar */
+  font-size: 2rem;
+  border-bottom: 2px solid #f4e04d;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 /* Imagem dentro do conteúdo */
@@ -148,4 +152,13 @@ body {
       flex-basis: auto;
       padding: 15px; /* Menos espaço interno no celular */
   }
+}
+.menu ul li a {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+}
+
+.menu ul li a:hover {
+  transform: scale(1.05); /* Aumenta levemente */
+  opacity: 0.9;
 }
